@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="minecraft-plugin-machinery:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/minecraft_plugin_machinery_jar</output-path>
+    <root id="archive" name="minecraft-plugin-machinery.jar">
+      <element id="module-output" name="minecraft-plugin-machinery" />
+    </root>
+  </artifact>
+</component>
