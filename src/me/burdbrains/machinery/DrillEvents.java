@@ -21,17 +21,31 @@ public final class DrillEvents implements Listener
         Block pBlock = blockPlace.getBlockPlaced();
         if (pBlock.getType() == Material.DISPENSER /*&& pBlock.getMetadata()*/)
         {
-            /// Second sendMessage sends "DOWN"
-            /// with this version of code
+            // Gets the BlockState and sets the
+            // BlockState data to a Dispenser object
 
             BlockState pState = pBlock.getState();
             org.bukkit.material.Dispenser dBlock = (org.bukkit.material.Dispenser) pState.getData();
-            //Directional dBlock = (Directional) pState.getData();
-            blockPlace.getPlayer().sendMessage(ChatColor.GOLD + "Block Facing: " + dBlock.getFacing());
+
+
+            // Sends message to the player
+            // checking getFacing() BlockFace
+            // BEFORE setting and updating
+            // BlockFace facing
+
+            //blockPlace.getPlayer().sendMessage(ChatColor.GOLD + "Block Facing: " + dBlock.getFacing());
+
             dBlock.setFacingDirection(BlockFace.DOWN);
             pState.setData(dBlock);
             pState.update();
-            blockPlace.getPlayer().sendMessage(ChatColor.GOLD + "Block Facing: " + dBlock.getFacing());
+
+
+            // Sends message to the player
+            // checking getFacing() BlockFace
+            // AFTER setting and updating
+            // BlockFace facing
+
+            //blockPlace.getPlayer().sendMessage(ChatColor.GOLD + "Block Facing: " + dBlock.getFacing());
         }
     }
 }
