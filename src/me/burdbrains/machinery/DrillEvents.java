@@ -12,6 +12,8 @@ import org.bukkit.block.data.BlockData;
 import org.bukkit.block.BlockState;
 import org.bukkit.material.Directional;
 import org.bukkit.material.MaterialData;
+import org.bukkit.block.Container;
+import org.bukkit.inventory.ItemStack;
 
 public final class DrillEvents implements Listener
 {
@@ -35,9 +37,28 @@ public final class DrillEvents implements Listener
 
             //blockPlace.getPlayer().sendMessage(ChatColor.GOLD + "Block Facing: " + dBlock.getFacing());
 
+
+            // Updates the block state with dBlock
+            // BlockData of new FacingDirection
             dBlock.setFacingDirection(BlockFace.DOWN);
             pState.setData(dBlock);
             pState.update();
+
+
+
+            /////////////////////////////////////////////
+            //                  TEST                   //
+            // Checking the dispenser for its contents //
+            /////////////////////////////////////////////
+
+            Container conTest = (Container) pState;
+
+            ItemStack[] conInvConts = conTest.getInventory().getContents();
+
+            blockPlace.getPlayer().sendMessage(ChatColor.AQUA + "Contents " + ChatColor.BLUE + conInvConts);
+
+            /////////////////////////////////////////////
+
 
 
             // Sends message to the player
