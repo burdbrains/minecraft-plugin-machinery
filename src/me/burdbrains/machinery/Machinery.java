@@ -8,7 +8,7 @@ public class Machinery extends JavaPlugin
     public void onEnable()
     {
         //Plugin startup logic
-        getLogger().info("v0.0.4.3 - Machinery by burdbrains has been enabled.");
+        getLogger().info("v0.0.5.1 - Machinery by burdbrains has been enabled.");
         getServer().getPluginManager().registerEvents(new DrillEvents(), this);
     }
 
@@ -16,7 +16,7 @@ public class Machinery extends JavaPlugin
     public void onDisable()
     {
         //Plugin closing logic
-        getLogger().info("v0.0.4.3 - Machinery by burdbrains had been disabled.");
+        getLogger().info("v0.0.5.1 - Machinery by burdbrains had been disabled.");
     }
 }
 

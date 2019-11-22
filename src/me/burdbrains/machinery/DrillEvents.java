@@ -54,8 +54,16 @@ public final class DrillEvents implements Listener
             Container conTest = (Container) pState;
 
             ItemStack[] conInvConts = conTest.getInventory().getContents();
+            blockPlace.getPlayer().sendMessage(ChatColor.BLUE + "Contents " + ChatColor.AQUA + conInvConts);
 
-            blockPlace.getPlayer().sendMessage(ChatColor.AQUA + "Contents " + ChatColor.BLUE + conInvConts);
+            ItemStack testItem1 = new ItemStack(Material.DIRT, 1);
+            ItemStack testItem2 = new ItemStack(Material.STONE, 2);
+            ItemStack testItem3 = new ItemStack(Material.IRON_BLOCK, 3);
+            ItemStack[] testItems = {testItem1, testItem2, testItem3};
+
+            conTest.getInventory().setContents(testItems);
+            ItemStack[] conInvConts2 = conTest.getInventory().getContents();
+            blockPlace.getPlayer().sendMessage(ChatColor.BLUE + "Contents " + ChatColor.AQUA + conInvConts2);
 
             /////////////////////////////////////////////
 
